@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-size {
+    width: 347px;
+    height: 354px;
+}
+
+
+@layer utilities {
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+}  
