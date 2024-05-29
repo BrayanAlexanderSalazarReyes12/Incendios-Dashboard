@@ -26,7 +26,7 @@ const db = getFirestore(app);
 export {db}
 
 //conexion mosquitto
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYnNhbGF6YXJyZXllczg4QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiYnJheWFucmV5ZXMxNCJ9LCJleHAiOjE3NDgwMjQxMDV9.kWtxwZXHn5R1qpSNCngohsufNIalxWF3r_3pXM5WaGU';
+const token = process.env.FIREBASE_TOKEN;
 
 //obtener autenticacion
 
@@ -39,7 +39,7 @@ export function signlogin(email,password) {
     .then(async (userCredential) => {
         //inicio existoso
         try {
-            const reponse = await fetch('172.210.49.132/profile',{
+            const reponse = await fetch(process.env.NODE_CONEXION_PERFIL,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export async function activacion_foco(Llama, CO, Foco, id){
     console.log(CO);
 
     try {
-        const reponse = await fetch('172.210.49.132/mosquitto',{
+        const reponse = await fetch(process.env.NODE_CONEXION_MOSQUITTO,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
