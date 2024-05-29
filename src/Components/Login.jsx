@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import Dashboard from "./Dashboard"
 import { desconectar, signlogin } from "./db/FireBaseConf"
+import Logo from "../img/Logo.png"
+import Salida from "../img/salida.png"
 
 const Login = () => {
     const [Activo, SetActivo] = localStorage.getItem('activo') === 'true' ? useState(true) : useState(false)
@@ -46,8 +48,8 @@ const Login = () => {
         <>
         <div className="bg-red-950 m-0 h-24">
             <div className="flex justify-between items-center mx-auto">
-                <img src="src/img/Logo.png" alt="Logo" className ="-mt-12 w-48 h-48 animate-fade"></img>
-                {Activo ? ( <img src="src/img/salida.png" alt="salida" className ="-mt-12 mr-3 w-14 h-14" onClick={handleOut}></img>) : false}
+                <img src={Logo} alt="Logo" className ="-mt-12 w-48 h-48 animate-fade"></img>
+                {Activo ? ( <img src={Salida} alt="salida" className ="-mt-12 mr-3 w-14 h-14" onClick={handleOut}></img>) : false}
             </div>
         </div>
             {Activo ? (
