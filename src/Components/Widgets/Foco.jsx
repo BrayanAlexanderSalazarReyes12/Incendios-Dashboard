@@ -12,10 +12,8 @@ const Foco = ( { foco, llama, CO, ID } ) => {
     useEffect(() => {
         if(Activo == "on"){
             Setbotton(true)
-            activacion_foco(llama,CO,1,ID)
         }else{
             Setbotton(false)
-            activacion_foco(llama,CO,0,ID)
         }
     },[Activo])
 
@@ -37,10 +35,12 @@ const Foco = ( { foco, llama, CO, ID } ) => {
 
     const handle_est_boton_on = () =>{
         Setactivo("on")
+        activacion_foco(llama,CO,1,ID)
     }
 
     const handle_est_boton_off = () =>{
         Setactivo("off")
+        activacion_foco(llama,CO,0,ID)
     }
 
     return (
